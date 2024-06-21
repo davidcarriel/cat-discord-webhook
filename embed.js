@@ -12,20 +12,24 @@ async function buildCatEmbed() {
     const hour = now.getHours();
     let period = '';
     let greeting;
+    let pronoum = '';
 
     if (hour >= 5 && hour < 12) {
         greeting = "Bom dia!";
         period = 'Dia'
+        pronoum = 'Do'
     } else if (hour >= 12 && hour < 18) {
         greeting = "Boa tarde!";
         period = 'Tarde'
+        pronoum = 'Da'
     } else {
         greeting = "Boa noite!";
         period = 'Noite'
+        pronoum = 'Da'
     }
 
     const embed = {
-        title: `Gatinho do ${period} 🐱`,
+        title: `Gatinho ${pronoum} ${period} 🐱`,
         description: `${greeting} São ${now.toLocaleTimeString()}. Apreciem essa fofura!`,
         color: 0xFFA500, // Cor laranja (pode alterar conforme preferir)
         image: {
